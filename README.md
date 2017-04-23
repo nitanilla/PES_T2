@@ -2,6 +2,7 @@
 
 Autores:
 Eduardo
+
 Nino Fabrizio Tiriticco Lizardo
 
 Uma reimplementação de 4 estilos criados por Cristina Lopes, da linguagem Python para Lua, seguindo as 6 regras do Engenheiro de Software.
