@@ -39,8 +39,20 @@ Executei o arquivo **tf-11.py** que contém o código sobre o estilo Letterbox p
 
 Data: 23/04/2017
 
-Implementei uma tradução direta da classe **dataStorageManager** de Python para Lua, tentando manter a tradução o mais direta possível. Fiquei em dúvida se os métodos **_init** e **_words** fazem em Lua o que é feito em Python, depois farei alguns testes simples com a classe. Por enquanto foquei em só fazer a tradução.
+Implementei uma tradução direta da classe **DataStorageManager** de Python para Lua, tentando manter a tradução o mais direta possível. Fiquei em dúvida se os métodos **_init** e **_words** fazem em Lua o que é feito em Python, depois farei alguns testes simples com a classe. Por enquanto foquei em só fazer a tradução.
 
 Criei o repositório para poder guardar o que foi feito referente ao trabalho. Penso em separar por pastas dentro dele os arquivos referentes a cada estilo, visto que alguns deles criam arquivos ao serem executados (estilo Good Old Times, por exemplo). Assim fica tudo mais organizado.
 
 Arquivos como os de Livro Diário e os de leitura necessários para a execução dos programas inicialmente ficarão soltos no repositório.
+
+-----------------------------------------
+
+Data: 25/04/2017
+
+Implementei a classe **StopWordManager** em Lua, tentando seguir processos similares ao código original. Vi que a autora fez uso de uma uma função que já faz parte da biblioteca original do Python para conseguir uma string contendo o alfabeto em ASCII, para resolver em Lua fiz uma implementação baseada em um link que achei (item 2 na parte de **Referências**).
+
+Vi também uma melhor forma de popular minha tabela que me permite navegar melhor nela para procurar palavras usando as próprias palavras como chaves da tabela, implementei no meu código.
+
+Após finalizar o código da classe, fiz testes simples no bloco de execução principal chamando os métodos da mesma forma que a autora faz (chamando o método **dispatch** com a mensagem do que me interessa fazer no objeto). Isso me possibilitou achar e corrigir erros simples no código da classe. Ela parece funcionar bem após as correções.
+
+Aproveitei para testar também minha classe **DataStorageManager** anteriormente implementada, constatei alguns erros. O método **_init** não gera a string como planejava. Depois tentarei ver como fazer a correção, mas acredito que esteja fazendo o uso errado das funções auxiliares que chamo do Lua dentro do método. Deixarei por enquanto o código de teste que fiz.

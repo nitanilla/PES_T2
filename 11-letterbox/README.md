@@ -28,6 +28,8 @@ Para executar:
 
 ------------------------------
 
-Referência:
+Referências:
 
-https://github.com/crista/exercises-in-programming-style/tree/master/11-letterbox
+1 - https://github.com/crista/exercises-in-programming-style/tree/master/11-letterbox
+
+2 - https://rosettacode.org/wiki/Generate_lower_case_ASCII_alphabet#Lua
