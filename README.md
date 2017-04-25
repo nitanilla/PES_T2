@@ -2,7 +2,7 @@
 
 Autores:
 
-Eduardo
+Eduardo Tiomno Tolmasquim
 
 Nino Fabrizio Tiriticco Lizardo
 
