@@ -3,8 +3,11 @@
 -- Version:		Date:			Assignment:
 -- 		1		23/04/2017		-Implemented class DataStorageManager
 --		2		25/04/2017		-Implemented class StopWordManager
---								-Tested and corrected methods in classes created
-
+--								-Fixed methods in StopWordManager
+--		3		26/04/2017		-Fixed methods in DataStorageManager
+--								-Implemented class WordFrequencyManager
+--								-Implemented class WordFrequencyController
+--								-Implemented block of main execution
 
 
 -- Class DataStorageManager
@@ -27,31 +30,25 @@ DataStorageManager.dispatch = function(self, message)
 	end
 end
 
--- Method which opens file, reads it and separates words
--- OBS.: Not working properly
+-- Method which opens file, reads it and filters the content
 DataStorageManager._init = function(self, path_to_file)
 
 	local f = io.open(path_to_file, "rb")
 	self._data = f:read "*a"
-	pattern = '[%w_]+'
-	self._data = self._data:match(pattern)
+	pattern = '([%W_]+)'
+	self._data = self._data:gsub(pattern, " ")
 	self._data = self._data:lower()
 	f:close()
-
-	print(self._data)
 end
 
--- Method which returns the words collected
--- OBS.: Not sure if this works properly
+-- Method which returns a table with the words collected
 DataStorageManager._words = function(self)
 
-	local data_str = self._data .. " "
+	local data_str = "" .. self._data
 	local table = {}
-	local index = 1
     
-    for word in string.gmatch(data_str, " ") do
-        table[index] = word
-        index = index + 1
+    for word in string.gmatch(data_str, "([%w]+)") do
+        table[#table + 1] = word
     end
 
 	return table
@@ -96,19 +93,110 @@ end
 
 -- Method which returns if word parameter is inside stop_words table
 StopWordManager._is_stop_word = function(self, word)
-
 	return self._stop_words[word] ~= nil
 end
 -- End of class StopWordManager
 
 
 
--- Main execution
---[[local new_file = io.open(arg[1], "rb")
-if new_file then new_file:close() end
-  print(new_file ~= nil)]]
+-- Class WordFrequencyManager
+-- Keeps the word frequency data
+local WordFrequencyManager = {}
 
-DataStorageManager:dispatch({"init", arg[1]})
---[[for k,v in pairs(DataStorageManager:dispatch({"words"})) do
-	print(k,v)
-end]]
+-- Attribute with the frequency of each word
+WordFrequencyManager["_word_freqs"] = {}
+
+-- Method which calls the respective method of this object for action asked
+WordFrequencyManager.dispatch = function(self, message)
+
+	if message[1] == "increment_count" then
+		return self:_increment_count(message[2])
+	elseif message[1] == "sorted" then
+		return self:_sorted()
+	else
+		print("Message not understood ", message[1])
+		os.exit()
+	end
+end
+
+-- Method which increase frequency number of given word inside table
+WordFrequencyManager._increment_count = function(self, word)
+
+	if self._word_freqs[word] ~= nil then
+		self._word_freqs[word] = self._word_freqs[word] + 1
+	else
+		self._word_freqs[word] = 1
+	end
+end
+
+-- Method which sorts the table by frequency in descending order
+WordFrequencyManager._sorted = function(self)
+
+	local keys = {}
+	for key in pairs(self._word_freqs) do
+    	table.insert(keys, key)
+    end
+
+    sortFunction = function(a, b) return a > b end
+    table.sort(keys, function(a, b) return sortFunction(self._word_freqs[a], self._word_freqs[b]) end)
+
+    local sorted = {}
+    for w, key in ipairs(keys) do
+  		sorted[#sorted+1] = {key, self._word_freqs[key]}
+	end
+
+    return sorted
+end
+-- End of class WordFrequencyManager
+
+
+
+-- Class WordFrequencyController
+-- Manages the other classes
+local WordFrequencyController = {}
+
+-- Method which calls the respective method of this object for action asked
+WordFrequencyController.dispatch = function(self, message)
+
+	if message[1] == "init" then
+		return self:_init(message[2])
+	elseif message[1] == "run" then
+		return self:_run()
+	else
+		print("Message not understood ", message[1])
+		os.exit()
+	end
+end
+
+-- Method which "initiates" objects from the other classes
+WordFrequencyController._init = function(self, path_to_file)
+
+	self._storage_manager = DataStorageManager
+	self._stop_word_manager = StopWordManager
+	self._word_freq_manager = WordFrequencyManager
+	self._storage_manager:dispatch({"init", path_to_file})
+	self._stop_word_manager:dispatch({"init"})
+end
+
+-- Method which initites the execution of the other objects
+WordFrequencyController._run = function(self)
+	
+	for _, word in pairs(self._storage_manager:dispatch({"words"})) do
+		if not self._stop_word_manager:dispatch({"is_stop_word", word}) then
+			self._word_freq_manager:dispatch({"increment_count", word})
+		end
+	end
+
+	word_freqs = self._word_freq_manager:dispatch({"sorted"})
+	for _, word in ipairs({unpack(word_freqs, 1, 25)}) do
+  		print(word[1], " - ", word[2])
+	end
+end
+-- End of class WordFrequencyController
+
+
+
+-- Main execution
+wfcontroller = WordFrequencyController
+wfcontroller:dispatch({"init", arg[1]})
+wfcontroller:dispatch({"run"})

@@ -6,17 +6,17 @@ O estilo Letterbox feito em Lua 5.1.4.
 
 ------------------------------
 
-Funcionamento:
+Funcionamento e lógica:
 
 O estilo é baseado em Orientação a Objetos, usando a lógica de sistemas distribuídos em que tarefas são divididas entre várias componentes para alcançar uma finalidade.
 
-O arquivo mandado de entrada para a execução é lido e tem seu conteúdo dividido em uma lista de palavras.
+O arquivo mandado de entrada para a execução é lido e tem seu conteúdo guarado em uma string e depois dividido em uma lista de palavras.
 
 As palavras extraídas são comparadas a palavras contidas em outro arquivo (**stop_words.txt**), as equivalentes são então eliminadas da lista original.
 
 As que permanecem são contabilizadas por frequência no arquivo original de entrada e organizadas das de maior frequência para as de menor. Como resultado, as 25 mais frequentes são mostradas no console.
 
-As etapas principais do programa foram divididas em objetos que só se comunicam entre si através de um método em comum (**dispatch**) que trata a ação requerida pelo objeto de chamada.
+As etapas principais do programa foram divididas em objetos que só se comunicam entre si através de um método em comum (**dispatch**) que trata a ação requerida por um outro objeto que é quem controla a ordem de execução das tarefas.
 
 ------------------------------
 
@@ -33,3 +33,5 @@ Referências:
 1 - https://github.com/crista/exercises-in-programming-style/tree/master/11-letterbox
 
 2 - https://rosettacode.org/wiki/Generate_lower_case_ASCII_alphabet#Lua
+
+3 - http://stackoverflow.com/questions/2038418/associatively-sorting-a-table-by-value-in-lua

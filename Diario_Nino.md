@@ -56,3 +56,17 @@ Vi também uma melhor forma de popular minha tabela que me permite navegar melho
 Após finalizar o código da classe, fiz testes simples no bloco de execução principal chamando os métodos da mesma forma que a autora faz (chamando o método **dispatch** com a mensagem do que me interessa fazer no objeto). Isso me possibilitou achar e corrigir erros simples no código da classe. Ela parece funcionar bem após as correções.
 
 Aproveitei para testar também minha classe **DataStorageManager** anteriormente implementada, constatei alguns erros. O método **_init** não gera a string como planejava. Depois tentarei ver como fazer a correção, mas acredito que esteja fazendo o uso errado das funções auxiliares que chamo do Lua dentro do método. Deixarei por enquanto o código de teste que fiz.
+
+-----------------------------------------
+
+Data: 26/04/2017
+
+Concertei os métodos **_init** e **_words** em **DataStorageManager**. O primeiro tinha problema no Pattern Matching que usava e em como usava a função **gsub** do Lua. O segundo só tinha problema no Pattern Match usado em **gmatch**, aproveitei para melhorar a forma de popular a tabela sem usar uma variável de índice.
+
+Implementei a classe **WordFrequencyManager**. Tive dificuldades com o método **_sorted**. Descubri que em Lua as tabelas são associativas, ou seja, não possuem ordem pelas chaves. Uma forma de conseguir representar as palavras em ordem decrescente é usando uma outra tabela com índices numéricos contendo as palavras como valores, ordenando da frequência necessária. Usei o código de uma solução que achei ao fazer a pesquisa (item 3 na parte de **Referências**) e adaptei.
+
+No final, minha versão do **_sorted** me retorna uma tabela contendo tabelas que possuem a palavra e sua frequência onde quanto maior o índice na tabela principal, maior a frequência. Provavelmente vai mudar a lógica dentro do método que cahama **_sorted**.
+
+Realizei testes simples para verificar que os métodos estejam funcionando devidamente e fiz as correções necessárias. Por enquanto sigo deixando o código teste caso precise voltar a mudar o código feito.
+
+Implementei a classe **WordFrequencyController**. Ficou bem similar ao código original, só tive que me preocupar em adaptar para a lógica da classe **WordFrequencyManager** explicada acima. Depois implementei o bloco de execução principal do programa e testei. O programa me retorna o mesmo resultado do programa original, resta para ele apenas garantir que esteja aplicando as 6 regras do Engenheiro de Software.
