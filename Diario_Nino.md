@@ -13,7 +13,7 @@ Data: 19/04/2017
 
 Baixei o repositório da autora Cristina Lopes do livro referente ao trabalho para poder analisar seu conteúdo e como funciona. Baixei também a versão 2.7.13 de Python para ver os resultados que os códigos retornam ao executá-los.
 
-Através do livro, escolhi como um dos estilos a trabalhar o Letterbox (Capítulo 11 no livro). De início, já vi que ele é baseado em Orientação a Objetos. Como ainda não estou muito bem familiarizado com Lua, ainda preciso ver como representar OO nessa linguagem.
+Através do livro, escolhi como um dos estilos a trabalhar o **Letterbox** (Capítulo 11 no livro). De início, já vi que ele é baseado em Orientação a Objetos. Como ainda não estou muito bem familiarizado com Lua, ainda preciso ver como representar OO nessa linguagem.
 
 Criei este arquivo para registrar o que vou fazendo referente ao trabalho.
 
@@ -21,9 +21,9 @@ Criei este arquivo para registrar o que vou fazendo referente ao trabalho.
 
 Data: 20/04/2017
 
-Comecei a ler o capítulo 11 do livro para entender melhor o estilo Letterbox. Pela explicação da autora, o estilo é baseado em comunicação por mensagens similar a sistemas distribuídos (onde tarefas são divididas entre componentes para chegar a uma finalidade).
+Comecei a ler o capítulo 11 do livro para entender melhor o estilo **Letterbox**. Pela explicação da autora, o estilo é baseado em comunicação por mensagens similar a sistemas distribuídos (onde tarefas são divididas entre componentes para chegar a uma finalidade).
 
-Como ainda preciso entender como representar OO em Lua, penso que escolher um outro estilo mais simples como segundo estilo a trabalhar sobre seja o mais ideal. Com isso, escolhi o Monolith (Capítulo 3 no livro).
+Como ainda preciso entender como representar OO em Lua, penso que escolher um outro estilo mais simples como segundo estilo a trabalhar sobre seja o mais ideal. Com isso, escolhi o **Monolithic** (Capítulo 3 no livro).
 
 Informei ao Eduardo na aula sobre os estilos que escolhi, ele ainda está por escolher os outros 2 estilos.
 
@@ -33,7 +33,7 @@ Data: 22/04/2017
 
 Pesquisei na internet como montar um programa em OO em Lua, achei um código exemplo explicado. A princípio achei o modelo similar a Java e C++.
 
-Executei o arquivo **tf-11.py** que contém o código sobre o estilo Letterbox para ver o resultado e tentar entender o que faz durante a execução. Aparentemente, ele abre o arquivo que mando por parâmetro de execução (**pride-and-prejudice.txt**), o lê e me retorna as primeiras 25 palavras consideradas não stop-words (pelo arquivo **stop_words.txt**) mais frequentes encontradas no arquivo original.
+Executei o arquivo **tf-11.py** que contém o código sobre o estilo **Letterbox** para ver o resultado e tentar entender o que faz durante a execução. Aparentemente, ele abre o arquivo que mando por parâmetro de execução (**pride-and-prejudice.txt**), o lê e me retorna as primeiras 25 palavras consideradas não stop-words (pelo arquivo **stop_words.txt**) mais frequentes encontradas no arquivo original.
 
 -----------------------------------------
 
@@ -70,3 +70,13 @@ No final, minha versão do **_sorted** me retorna uma tabela contendo tabelas qu
 Realizei testes simples para verificar que os métodos estejam funcionando devidamente e fiz as correções necessárias. Por enquanto sigo deixando o código teste caso precise voltar a mudar o código feito.
 
 Implementei a classe **WordFrequencyController**. Ficou bem similar ao código original, só tive que me preocupar em adaptar para a lógica da classe **WordFrequencyManager** explicada acima. Depois implementei o bloco de execução principal do programa e testei. O programa me retorna o mesmo resultado do programa original, resta para ele apenas garantir que esteja aplicando as 6 regras do Engenheiro de Software.
+
+-----------------------------------------
+
+Data: 27/04/2017
+
+Li a definição do estilo **Monolithic** no livro da autora para entender a lógica por trás. Registrei meu entendimento no arquivo **README.md** dentro da pasta que criei para conter tudo referente ao estilo.
+
+Seguirei a mesma estratégia que fiz com o estilo **Letterbox**, me preocupando em fazer uma tradução direta do código original em Python para meu código em Lua, deixando para aplicar no final as 6 regras do Engenheiro de Software.
+
+Comecei a implementar o código em **Monolithic.lua**, por enquanto só tem a parte de gerar a estrutura contendo as stop words. Reaproveitei meu código de **Letterbox.lua** e fiz as adaptações necessárias.
