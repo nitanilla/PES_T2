@@ -80,3 +80,23 @@ Li a definição do estilo **Monolithic** no livro da autora para entender a ló
 Seguirei a mesma estratégia que fiz com o estilo **Letterbox**, me preocupando em fazer uma tradução direta do código original em Python para meu código em Lua, deixando para aplicar no final as 6 regras do Engenheiro de Software.
 
 Comecei a implementar o código em **Monolithic.lua**, por enquanto só tem a parte de gerar a estrutura contendo as stop words. Reaproveitei meu código de **Letterbox.lua** e fiz as adaptações necessárias.
+
+-----------------------------------------
+
+Data: 28/04/2017
+
+Implementei o resto do código que ficou faltando em **Monolithic.lua**. O código acabou ficando bem similar ao original, com algumas mudanças referentes ao modo de tratar indexação e como tratar a tabela principal.
+
+Percebi que no código principal uma variável (**found_at**) é declarada e inicializada, mas nunca usada no código. Por enquanto mantive, mas devo remover na versão final.
+
+Ao rodar meu código, percebi que houve perda de frequência na grande maioria das palavras em relação ao resultado do código original, mas gerando resultados relativamente próximos. Penso que se trate de alguns casos específicos envolvendo as palavras, mas podem ser tanto no momento de identificar uma palavra como na de verificar se está ou não na tabela principal para mexer no contador. Mesmo verificando com calma cada etapa do código, ainda não consegui perceber o que pode estar causando isso.
+
+-----------------------------------------
+
+Data: 29/04/2017
+
+Modifiquei o arquivo texto para analisar possíveis casos em que as palavras não são lidas, deixando poucos casos diferentes para identificar mais facilmente o problema. Descobri que o problema está quando a palavra vem exatamente antes de um pula-linha (\n ou \r, dependendo do SO).
+
+Mudei a parte do loop que lida com pegar os caracteres da linha para garantir que o caracter de pular linha seja incluído, pois sem ele não consigo identificar as palavras que vem antes dele. Deixei o arquivo texto como estava e rodei o código. Os resultados batem com o do código original.
+
+A próxima etapa para **Letterbox.lua** e **Monolithic.lua** é aplicar as 6 regras do Engenheiro de Software.
