@@ -100,3 +100,13 @@ Modifiquei o arquivo texto para analisar possíveis casos em que as palavras nã
 Mudei a parte do loop que lida com pegar os caracteres da linha para garantir que o caracter de pular linha seja incluído, pois sem ele não consigo identificar as palavras que vem antes dele. Deixei o arquivo texto como estava e rodei o código. Os resultados batem com o do código original.
 
 A próxima etapa para **Letterbox.lua** e **Monolithic.lua** é aplicar as 6 regras do Engenheiro de Software.
+
+-----------------------------------------
+
+Data: 01/05/2017
+
+Apliquei a regra de **não inventar nomes** sobre as variáveis e métodos no arquivo **Letterbox.lua**. Ampliei também a sua documentação para explicar melhor cada etapa e simplifiquei algumas partes do código.
+
+O estilo **Letterbox.lua** obedece a regra do **Intervalo Mágico** ao fazer a divisão da tarefa principal entre 4 classes, onde 3 delas possuem papéis referentes ao que o programa deve fazer (extrair dados do arquivo do livro e filtrar eles, extrair dados do arquivo de stop words e fazer operações referentes a eles e calcular a frequência de palavras e organizar a estrutura final) e a outra comanda elas, organizando como a execução é feita.
+
+Atualizei o arquivo **README.md** na pasta de Letterbox.

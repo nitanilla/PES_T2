@@ -8,15 +8,15 @@ O estilo Letterbox feito em Lua 5.1.4.
 
 Funcionamento e lógica:
 
-O estilo é baseado em Orientação a Objetos, usando a lógica de sistemas distribuídos em que tarefas são divididas entre várias componentes para alcançar uma finalidade.
+O estilo é baseado em Orientação a Objetos, usando a lógica da troca de mensagens entre componentes de Sistemas Distribuídos em que tarefas são divididas entre várias componentes para alcançar uma finalidade.
 
-O arquivo mandado de entrada para a execução é lido e tem seu conteúdo guarado em uma string e depois dividido em uma lista de palavras.
+O arquivo mandado de entrada para a execução é lido e tem seu conteúdo guardado em uma string e depois dividido em uma lista de palavras.
 
-As palavras extraídas são comparadas a palavras contidas em outro arquivo (**stop_words.txt**), as equivalentes são então eliminadas da lista original.
+As palavras extraídas são comparadas a palavras contidas em outro arquivo (**stop_words.txt**), as equivalentes não passam através de um filtro.
 
-As que permanecem são contabilizadas por frequência no arquivo original de entrada e organizadas das de maior frequência para as de menor. Como resultado, as 25 mais frequentes são mostradas no console.
+As palavras restantes são contabilizadas por frequência de aparição no arquivo original de entrada e organizadas das de maior frequência para as de menor. Como resultado, as 25 mais frequentes são mostradas no console.
 
-As etapas principais do programa foram divididas em objetos que só se comunicam entre si através de um método em comum (**dispatch**) que trata a ação requerida por um outro objeto que é quem controla a ordem de execução das tarefas.
+As etapas principais do programa foram divididas em objetos que só se comunicam entre si através de um método em comum (**dispatchMessage**) que trata a ação requerida pelo objeto de uma classe principal (**WordFrequencyController**) que é quem controla a ordem de execução das tarefas e mostra no console o resultado final.
 
 ------------------------------
 
