@@ -285,8 +285,8 @@ WordFrequencyController._execute = function(thisObject)
 	end
 
 	sorted_word_freqs = thisObject._word_freq_manager:dispatchMessage({"get_sorted_words_frequencies"})
-	for _, word in ipairs({unpack(sorted_word_freqs, 1, 25)}) do
-  		print(word[1], " - ", word[2])
+	for _, word_frequency in ipairs({unpack(sorted_word_freqs, 1, 25)}) do
+  		print(word_frequency[1], " - ", word_frequency[2])
 	end
 end
 -- End of class WordFrequencyController

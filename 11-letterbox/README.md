@@ -20,6 +20,17 @@ As etapas principais do programa foram divididas em objetos que só se comunicam
 
 ------------------------------
 
+As 6 Regras do Engenheiro de Software:
+
+- **Não invente nomes**:
+- **Intervalo Mágico**:
+- **Desenho Limpo**:
+- **Identificação**:
+- **Verificação e Validação**:
+- **Livro Diário**: Presente no arquivo **Diario_Nino.md**
+
+------------------------------
+
 Para executar:
 
 - Abrir janela do CMD (Windows) ou Terminal (Linux)

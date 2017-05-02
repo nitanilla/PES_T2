@@ -22,6 +22,17 @@ Depois de terminar o loop principal, o programa simplesmente mostra as 25 primei
 
 ------------------------------
 
+As 6 Regras do Engenheiro de Software:
+
+- **Não invente nomes**:
+- **Intervalo Mágico**:
+- **Desenho Limpo**:
+- **Identificação**:
+- **Verificação e Validação**:
+- **Livro Diário**: Presente no arquivo **Diario_Nino.md**
+
+------------------------------
+
 Para executar:
 
 - Abrir janela do CMD (Windows) ou Terminal (Linux)

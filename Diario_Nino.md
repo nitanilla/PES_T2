@@ -110,3 +110,13 @@ Apliquei a regra de **não inventar nomes** sobre as variáveis e métodos no ar
 O estilo **Letterbox.lua** obedece a regra do **Intervalo Mágico** ao fazer a divisão da tarefa principal entre 4 classes, onde 3 delas possuem papéis referentes ao que o programa deve fazer (extrair dados do arquivo do livro e filtrar eles, extrair dados do arquivo de stop words e fazer operações referentes a eles e calcular a frequência de palavras e organizar a estrutura final) e a outra comanda elas, organizando como a execução é feita.
 
 Atualizei o arquivo **README.md** na pasta de Letterbox.
+
+-----------------------------------------
+
+Data: 02/05/2017
+
+Apliquei a regra de **não inventar nomes** sobre as variáveis no arquivo **Monolithic.lua**.
+
+Combinei com o Eduardo o padrão que seguiremos para o código dos estilos e como mostraremos as 6 regras.
+
+Atualizei os arquivos **README.md** das pastas **03-monolithic** e **11-letterbox** com uma parte para explicar a aplicação das 6 regras do Engenheiro de Software.
