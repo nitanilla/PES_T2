@@ -22,11 +22,11 @@ As etapas principais do programa foram divididas em objetos que só se comunicam
 
 As 6 Regras do Engenheiro de Software:
 
-- **Não invente nomes**:
-- **Intervalo Mágico**:
+- **Não invente nomes**: Os nomes das variáveis, dos métodos e os identificadores das mensagens foram adaptados para se encaixarem melhor na lógica do programa e facilitar a leitura do mesmo.
+- **Intervalo Mágico**: A regra já era aplicada originalmente pelo estilo ao ver que a divisão da tarefa principal é feita entre 4 classes, assim estando entre o intervalo [3, 6] definido.
 - **Desenho Limpo**:
-- **Identificação**:
-- **Verificação e Validação**:
+- **Identificação**: O Github identifica a autoria e informações das versões pelos commits feitos. Também é possível verificar esta regra pelo início da documentação no código.
+- **Verificação e Validação**: As pré e pós condições dos métodos são inicialmente especificadas na documentação quando há parâmetros de entrada e retorno, respectivamente.
 - **Livro Diário**: Presente no arquivo **Diario_Nino.md**
 
 ------------------------------

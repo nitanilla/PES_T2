@@ -24,10 +24,10 @@ Depois de terminar o loop principal, o programa simplesmente mostra as 25 primei
 
 As 6 Regras do Engenheiro de Software:
 
-- **Não invente nomes**:
-- **Intervalo Mágico**:
+- **Não invente nomes**: Os nomes das variáveis foram adaptados para se encaixarem melhor na lógica do programa e facilitar a leitura do mesmo.
+- **Intervalo Mágico**: Não é possível empregar esta regra no estilo, pois ele tem como lógica executar todas as tarefas do código em um único bloco. Ou seja, ele não faz uso de modularização.
 - **Desenho Limpo**:
-- **Identificação**:
+- **Identificação**: O Github identifica a autoria e informações das versões pelos commits feitos. Também é possível verificar esta regra pelo início da documentação no código.
 - **Verificação e Validação**:
 - **Livro Diário**: Presente no arquivo **Diario_Nino.md**
 

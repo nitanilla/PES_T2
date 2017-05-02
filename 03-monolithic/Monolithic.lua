@@ -15,7 +15,7 @@ local sorted_word_freqs = {}
 -- Building the stop word structure
 local _stop_words = {}
 file = io.open("../stop_words.txt", "rb")
-file_content = file:read "*a"
+file_content = file:read "*all"
 for word in string.gmatch(file_content, "([^,%s]+)") do
     _stop_words[word] = true
 end

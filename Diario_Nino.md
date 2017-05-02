@@ -120,3 +120,5 @@ Apliquei a regra de **não inventar nomes** sobre as variáveis no arquivo **Mon
 Combinei com o Eduardo o padrão que seguiremos para o código dos estilos e como mostraremos as 6 regras.
 
 Atualizei os arquivos **README.md** das pastas **03-monolithic** e **11-letterbox** com uma parte para explicar a aplicação das 6 regras do Engenheiro de Software.
+
+Argumentei a presença das regras obedecidas até agora nos arquivos **README.md** dos estilos que citei acima.
