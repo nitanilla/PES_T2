@@ -122,3 +122,9 @@ Combinei com o Eduardo o padrão que seguiremos para o código dos estilos e com
 Atualizei os arquivos **README.md** das pastas **03-monolithic** e **11-letterbox** com uma parte para explicar a aplicação das 6 regras do Engenheiro de Software.
 
 Argumentei a presença das regras obedecidas até agora nos arquivos **README.md** dos estilos que citei acima.
+
+-----------------------------------------
+
+Data: 03/05/2017
+
+Atualizei a parte onde é especificada a presença das 6 regras nos arquivos **README.md** em **03-monolithic** e **11-letterbox**. Ficou faltando a regra **Desenho Limpo** para ambos estilos.
