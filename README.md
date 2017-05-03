@@ -14,9 +14,9 @@ Uma reimplementação de 4 estilos criados por Cristina Lopes, da linguagem Pyth
 
 Para executar:
 
-- Abrir janela do CMD (Windows) ou Terminal (Linux)
+- Abrir janela do CMD (Windows) ou Terminal (Linux/Mac)
 - Posicionar a linha de comando no endereço onde se encontra o arquivo que se quer executar
-- Digitar **lua arquivo.lua ../pride-and-prejudice.txt**
+- Digitar **lua arquivo1.lua ../arquivo2.txt**, onde **arquivo2.txt** é o arquivo a ser analisado pelo programa
 
 ------------------------------
 

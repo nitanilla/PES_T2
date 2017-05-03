@@ -29,14 +29,21 @@ As 6 Regras do Engenheiro de Software:
 - **Desenho Limpo**:
 - **Identificação**: O Github identifica a autoria e informações das versões pelos commits feitos. Também é possível verificar esta regra pelo início da documentação no código.
 - **Verificação e Validação**:
+Se os arquivos lidos não existem ou o endereço especificado está errado, o programa acusa erro e intorrompe a execução ao tentar executar **file:read** (linha 18) e **io.lines** (linha 28). Espera-se que os arquivos lidos tenham conteúdo dentro deles.
+Cada caracter é lido um a um (linha 82 atualiza o índice do caracter) da respectiva linha por esta estar contida dentro de uma String e se usa o seu tamanho como referência (atenção para o caracter de fim de String ser incluído) (linha 32).
+Uma String equivalendo a uma palavra é inserida na variável **word** (linha 43) através de uma subtring da respectiva linha quando são guardados índices anteriormente ao se identificar um character como alfanumérico (linha 35) para incício de palavra e um character como não-alfanumérico (linha 40) como fim dessa palavra.
+A palavra lida é verificada como não sendo stop word (linha 47) pelo conteúdo da estrutura preenchida anteriormente ao ler **stop_words.txt**.
+Quando a palavra está na tabela global (inicializada na linha 13) contendo {palavra, frequência} (linha 52), sua frequência é aumentada em 1 (linha 53) e uma flag especificada anteriormente (linha 42) é ativada. Quando a flag acusa que não está (linha 59), é incluída na tabela e tem atribuída a frequência 1.
+Se verifica que a tabela global seja reorganizada quando uma palavra já presente (condição if-else da linha 59) tem sua frequência aumentada (linha 53) e a tabela possui mais de uma palavra (linha 61). A tabela só é verificada a partir do índice dessa palavra (linha 57 ajusta seu valor) até o topo da tabela (linha 64). São comparadas as frequências de uma palavra pela a que está diretamente acima dela na tabela (linha 65) e caso a de baixo seja maior, elas trocam de lugar na tabela (da linha 67 à linha 72).
+Os passos acima garantem que a tabela global possui os dados esperados ao serem mostrados na sequência final do código (linha 87).
 - **Livro Diário**: Presente no arquivo **Diario_Nino.md**
 
 ------------------------------
 
 Para executar:
 
-- Abrir janela do CMD (Windows) ou Terminal (Linux)
-- Posicionar a linha de comando no endereço onde se encontra o arquivo
+- Abrir janela do CMD (Windows) ou Terminal (Linux/Mac)
+- Posicionar a linha de comando no endereço **../03-monolithic**
 - Digitar **lua Monolithic.lua ../pride-and-prejudice.txt**
 
 ------------------------------
