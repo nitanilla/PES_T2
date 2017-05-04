@@ -136,3 +136,5 @@ Data: 04/05/2017
 Construí os modelos representando as arquiteturas dos estilos **Monolithic** e **Letterbox**, eles dão uma ideia de como é a sequência das tarefas feitas pelos programas e quais são elas. Estão respectivamente nos arquivos **Monolithic_Arquitecture.pdf** e **Letterbox_Arquitecture.pdf** dentro de suas respectivas pastas no projeto.
 
 Atualizei os arquivos **README.md** em **03-monolithic** e **11-letterbox** para notificar a inclusão da regra **Desenho Limpo**.
+
+Percebi uns pequenos problemas nos códigos feitos pelo Eaduardo que causavam a letra s entrar na lista de palavras mais frequentes. Só tive que mudar como o alfabeto era incluído na tabela de stop words. As mudanças foram nos arquivos **pipeline.lua** e **cookbook.lua**.
