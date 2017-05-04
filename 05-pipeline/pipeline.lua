@@ -1,26 +1,11 @@
+-- Pipeline style in Lua
+-- Author: Eduardo Tiomno Tolmasquim
+-- Version:		Date:			Assignment:
+-- 		1		02/05/2017		-Made almost all translation to Lua
+--		2		03/05/2017		-Made sort function
 
---
+
 -- The procedures
---
-function has_value(tab, val)
-    for index, value in ipairs(tab) do
-        if value == val then
-            return true
-        end
-    end
-
-    return false
-end
-
-function tableSize(T)
-	local lengthNum = 0
-
-	for k, v in pairs(T) do 
-   		lengthNum = lengthNum + 1
-	end
-
-	return lengthNum
-end
 
 function read_file(path_to_file)
     
@@ -64,15 +49,31 @@ function remove_stop_words(words)
 	for ascii = 97, 122 do
 		stop_words[string.char(ascii)] = true
 	end
+
+	local number_of_words  = 0
+	for k, v in pairs(words) do 
+   		number_of_words = number_of_words + 1
+	end
+
     indexes = {}
-    for i = 1,tableSize(words) do
-        if has_value(stop_words, words[i]) then
+    for i = 1,number_of_words do
+
+		local has_value = false
+		for _, value in ipairs(stop_words) do
+    	    if value == words[i] then
+        	    has_value = true
+        	end
+	    end
+
+        if has_value then
             table.insert(indexes,i)
 		end
 	end
+
     for k,v in pairs(indexes) do
         words[v] = nil
 	end
+ 
 	return words
 end
 
@@ -94,26 +95,28 @@ function frequencies(words)
 
 end
 
--- function from [1]
 function sort(word_freqs)
+	
+	-- Sort words by frequency
 
-	local temp_word_freqs = {}
-
+	local ordered_words = {}	
 
 	for word, freq in pairs(word_freqs) do
-		table.insert(temp_word_freqs, { ["word"] = word, ["freq"] = freq })
+		table.insert(ordered_words, { ["key"] = word, ["value"] = freq })
 	end
 
-	table.sort(temp_word_freqs, function(a, b) return a.freq > b.freq end)
+	table.sort(ordered_words, function(a, b) return a["value"] > b["value"] end)
 
-	word_freqs = temp_word_freqs
-	return word_freqs
+	return ordered_words
 end
 
-function printResult(word_freqs)
+function print_words(ordered_words)
+
+	-- Print result on screen
+
 	local maxNumberOfWords = 0
-	for k, v in pairs(word_freqs) do
-		print(v['word'],'-',v['freq'])
+	for k, v in pairs(ordered_words) do
+		print(v["key"],'-',v["value"])
 		maxNumberOfWords = maxNumberOfWords + 1
 		if maxNumberOfWords >= 25 then break end
 	end
@@ -122,6 +125,4 @@ end
 --
 -- The main function
 --
-printResult(sort(frequencies(remove_stop_words(scan(filter_chars_and_normalize(read_file(arg[1])))))))
-
---[1],Mauricio De Castro Lana e Douglas Mandarino, https://github.com/maumau27/PUC-Rio-INF1629-Trabalho_2/blob/master/CookBook/cookbook.lua
+print_words(sort(frequencies(remove_stop_words(scan(filter_chars_and_normalize(read_file(arg[1])))))))
