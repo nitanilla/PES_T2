@@ -128,3 +128,11 @@ Argumentei a presença das regras obedecidas até agora nos arquivos **README.md
 Data: 03/05/2017
 
 Atualizei a parte onde é especificada a presença das 6 regras nos arquivos **README.md** em **03-monolithic** e **11-letterbox**. Ficou faltando a regra **Desenho Limpo** para ambos estilos.
+
+-----------------------------------------
+
+Data: 04/05/2017
+
+Construí os modelos representando as arquiteturas dos estilos **Monolithic** e **Letterbox**, eles dão uma ideia de como é a sequência das tarefas feitas pelos programas e quais são elas. Estão respectivamente nos arquivos **Monolithic_Arquitecture.pdf** e **Letterbox_Arquitecture.pdf** dentro de suas respectivas pastas no projeto.
+
+Atualizei os arquivos **README.md** em **03-monolithic** e **11-letterbox** para notificar a inclusão da regra **Desenho Limpo**.

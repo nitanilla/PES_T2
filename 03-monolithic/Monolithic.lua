@@ -61,16 +61,16 @@ for line in io.lines(arg[1]) do
 					elseif #sorted_word_freqs > 1 then
 
 						-- Might need to reorder global table
-						for n = word_frequency_index, 1, -1 do
-							if sorted_word_freqs[word_frequency_index][2] > sorted_word_freqs[n][2] then
+						for word_below_index = word_frequency_index, 1, -1 do
+							if sorted_word_freqs[word_frequency_index][2] > sorted_word_freqs[word_below_index][2] then
 								-- Swapping
-								temp_word = sorted_word_freqs[n][1]
-								temp_freq = sorted_word_freqs[n][2]
-								sorted_word_freqs[n][1] = sorted_word_freqs[word_frequency_index][1]
-								sorted_word_freqs[n][2] = sorted_word_freqs[word_frequency_index][2]
+								temp_word = sorted_word_freqs[word_below_index][1]
+								temp_freq = sorted_word_freqs[word_below_index][2]
+								sorted_word_freqs[word_below_index][1] = sorted_word_freqs[word_frequency_index][1]
+								sorted_word_freqs[word_below_index][2] = sorted_word_freqs[word_frequency_index][2]
 								sorted_word_freqs[word_frequency_index][1] = temp_word
 								sorted_word_freqs[word_frequency_index][2] = temp_freq
-								word_frequency_index = n
+								word_frequency_index = word_below_index
 							end
 						end
 					end

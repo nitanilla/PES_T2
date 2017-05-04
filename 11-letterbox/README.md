@@ -24,7 +24,7 @@ As 6 Regras do Engenheiro de Software:
 
 - **Não invente nomes**: Os nomes das variáveis, dos métodos e os identificadores das mensagens foram adaptados para se encaixarem melhor na lógica do programa e facilitar a leitura do mesmo.
 - **Intervalo Mágico**: A regra já era aplicada originalmente pelo estilo ao ver que a divisão da tarefa principal é feita entre 4 classes, assim estando entre o intervalo [3, 6] definido.
-- **Desenho Limpo**:
+- **Desenho Limpo**: Presente no arquivo **Letterbox_Architecture.pdf**.
 - **Identificação**: O Github identifica a autoria e informações das versões pelos commits feitos. Também é possível verificar esta regra pelo início da documentação no código.
 - **Verificação e Validação**: As pré e pós condições dos métodos são inicialmente especificadas na documentação quando há parâmetros de entrada e se há retorno, respectivamente. Espera-se que os arquivos lidos tenham conteúdo dentro deles. A própria execução do programa serve como verificação quando se obtém o resultado esperado (uma listagem de palavras seguidas por valores numéricos representando frequências). Mais especificações abaixo.
 	* Classe **DataStorageManager**
