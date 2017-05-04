@@ -48,7 +48,7 @@ function remove_stop_words()
     -- add single-letter words
 	
 	for ascii = 97, 122 do
-		stop_words[string.char(ascii)] = true
+		table.insert(stop_words, string.char(ascii))
 	end
 
 	local number_of_words  = 0
