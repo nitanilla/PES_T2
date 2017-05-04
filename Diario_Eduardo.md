@@ -30,3 +30,9 @@ Voltei à estratégia inicial e fiz minha própria tradução do cookbook e do p
 Data: 03/05/2017
 
 Refatorei o código do Cookbook e do Pipeline. Incorporei as funções auxiliares às funções principais para manter rigor com os estilos. Refiz a função de ordenação. Escrevi a documentação dos dois estilos (os README's') 
+
+-----------------------------------------
+
+Data: 04/05/2017
+
+Elaboração dos diagramas para Cookbook e Pipeline
