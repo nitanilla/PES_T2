@@ -296,3 +296,5 @@ end
 wfcontroller = WordFrequencyController
 wfcontroller:dispatchMessage({"initiate_all", arg[1]})
 wfcontroller:dispatchMessage({"execute"})
+
+-- ver comentarios no pull-request (Roxana)
