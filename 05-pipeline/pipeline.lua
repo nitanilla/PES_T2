@@ -126,3 +126,4 @@ end
 -- The main function
 --
 print_words(sort(frequencies(remove_stop_words(scan(filter_chars_and_normalize(read_file(arg[1])))))))
+-- ver comentarios no pull-request (Roxana)
